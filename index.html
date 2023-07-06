@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+    }
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+    .login-input {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 200px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .login-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff4081;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .login-button:hover {
+      background-color: #ff2070;
+    }
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin: 20px 0;
+      color: #ff4081;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meu Coração</h1>
+  
+  <div class="login-container">
+    <input type="text" id="usernameInput" class="login-input" placeholder="Usuário">
+    <input type="password" id="passwordInput" class="login-input" placeholder="Senha">
+    <button class="login-button" onclick="login()">Entrar</button>
+  </div>
+
+  <script>
+    function login() {
+      var username = document.getElementById("usernameInput").value;
+      var password = document.getElementById("passwordInput").value;
+
+      if (username === "alessandra" && password === "meucoracao") {
+        window.location.href = "mensagem.html"; // Redirect to mensagem.html
+      } else {
+        alert("Usuário ou senha inválidos.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #ff4081;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button + .button {
+      margin-left: 10px; /* Added margin between buttons */
+    }
+    .button:hover {
+      background-color: #ff2070;
+    }
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin: 20px 0;
+      color: #ff4081;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    p {
+      font-size: 18px;
+      color: #ff4081;
+      font-weight: bold;
+    }
+    .video-container {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      padding-top: 56.25%; /* 16:9 aspect ratio (height / width) */
+      margin: 20px;
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>😊 ❤️</h1>
+  <p>Alessandra, você aceita ser minha Duo?</p>
+  
+  <div class="button-container">
+    <button class="button" id="simButton">Sim</button>
+    <button class="button" id="naoButton">Não</button>
+  </div>
+
+  <script>
+    var naoButton = document.getElementById("naoButton");
+    var simButton = document.getElementById("simButton");
+
+    naoButton.addEventListener("mouseover", moveButton);
+    naoButton.addEventListener("click", moveButton);
+
+    function moveButton() {
+      var screenWidth = window.innerWidth;
+      var screenHeight = window.innerHeight;
+
+      var randomX = Math.floor(Math.random() * (screenWidth - naoButton.offsetWidth));
+      var randomY = Math.floor(Math.random() * (screenHeight - naoButton.offsetHeight));
+
+      naoButton.style.position = "fixed"; // Set button position to fixed
+      naoButton.style.left = randomX + "px";
+      naoButton.style.top = randomY + "px";
+    }
+
+    simButton.addEventListener("click", playVideo);
+
+    function playVideo() {
+      var videoContainer = document.createElement("div");
+      videoContainer.classList.add("video-container");
+      videoContainer.innerHTML = `
+        <video controls autoplay>
+          <source src="src/video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+      document.body.appendChild(videoContainer);
+    }
+  </script>
+</body>
+</html>
